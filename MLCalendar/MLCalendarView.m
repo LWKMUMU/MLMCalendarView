@@ -128,7 +128,8 @@
     
     self.collectionView.dataSource = self;
     
-    [self.collectionView registerNib:[UINib nibWithNibName:@"MLCalendarCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"MLCalendarCollectionViewCell"];
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"MLCalendarCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"MLCalendarCollectionViewCell"];
+    [self.collectionView registerClass:[MLCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"MLCalendarCollectionViewCell"];
     
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader  withReuseIdentifier:@"MLCollectionViewHeaderView"];
     
@@ -157,7 +158,7 @@
     
     _currentYear = year([NSDate date]);
     
-    _yearLabel.text = [NSString stringWithFormat:@"%ld",_currentYear];
+    _yearLabel.text = [NSString stringWithFormat:@"%ld",(long)_currentYear];
     
     //取消按钮
     
@@ -189,11 +190,11 @@
             
             MLCalendarModel * endModel = self.dataArray[self.moreEndHighlightedModel.month];
             
-            NSLog(@"%@-%ld    %@-%ld 共%ld 天",beginModel.date,self.moreBeginHighlightedModel.day,endModel.date,self.moreEndHighlightedModel.day,_totalSelectedDay);
+            NSLog(@"%@-%ld    %@-%ld 共%ld 天",beginModel.date,(long)self.moreBeginHighlightedModel.day,endModel.date,(long)self.moreEndHighlightedModel.day,(long)_totalSelectedDay);
             
             if (self.multiSelectBlock){
                 
-                self.multiSelectBlock([NSString stringWithFormat:@"%@-%ld",beginModel.date,self.moreBeginHighlightedModel.day], [NSString stringWithFormat:@"%@-%ld",endModel.date,self.moreEndHighlightedModel.day], _totalSelectedDay);
+                self.multiSelectBlock([NSString stringWithFormat:@"%@-%ld",beginModel.date,(long)self.moreBeginHighlightedModel.day], [NSString stringWithFormat:@"%@-%ld",endModel.date,(long)self.moreEndHighlightedModel.day], _totalSelectedDay);
             }
         }
     }else{
@@ -202,11 +203,11 @@
             
             MLCalendarModel * selectedModel = self.dataArray[self.highlightedModel.month];
 
-            NSLog(@"%@-%ld",selectedModel.date,self.highlightedModel.day);
+            NSLog(@"%@-%ld",selectedModel.date,(long)self.highlightedModel.day);
             
             if (self.selectBlock){
                 
-                self.selectBlock([NSString stringWithFormat:@"%@-%ld",selectedModel.date,self.highlightedModel.day]);
+                self.selectBlock([NSString stringWithFormat:@"%@-%ld",selectedModel.date,(long)self.highlightedModel.day]);
             }
         }
         
@@ -287,7 +288,7 @@
         
         if (i == indexPath.section){
             
-            model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",indexPath.row - model.firstDay_WeekDay + 2]]];
+            model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%d",indexPath.row - model.firstDay_WeekDay + 2]]];
         }else{
             
             model.highlightedArray = [NSMutableArray new];
@@ -328,7 +329,7 @@
                 
                 _totalSelectedDay += 1;
                 
-                [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",i]];
+                [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",(long)i]];
                 
             }
         }
@@ -356,19 +357,19 @@
                     if (j >= self.moreBeginHighlightedModel.day){
                         
                         _totalSelectedDay += 1;
-                        [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",j]];
+                        [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",(long)j]];
                     }
                 }else if (i == self.moreEndHighlightedModel.month){
                     
                     if (j <= self.moreEndHighlightedModel.day){
                         _totalSelectedDay += 1;
 
-                        [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",j]];
+                        [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",(long)j]];
                     }
                 }else{
                     _totalSelectedDay += 1;
 
-                    [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",j]];
+                    [newHidlightedArray addObject:[NSString stringWithFormat:@"%ld",(long)j]];
                 }
             }
             
@@ -401,7 +402,7 @@
     
     //判断是否转换起始点（点击的日期小于当前高亮的日期 时 转换）
     
-    NSInteger comp = compareDate([NSString stringWithFormat:@"%@-%@-%@",oldHighlightedModel.year,oldHighlightedModel.month,[oldHighlightedModel.highlightedArray objectAtIndex:0]], [NSString stringWithFormat:@"%@-%@-%ld",model.year,model.month,day]);
+    NSInteger comp = compareDate([NSString stringWithFormat:@"%@-%@-%@",oldHighlightedModel.year,oldHighlightedModel.month,[oldHighlightedModel.highlightedArray objectAtIndex:0]], [NSString stringWithFormat:@"%@-%@-%ld",model.year,model.month,(long)day]);
     
     if (comp == -1){
         
@@ -492,7 +493,7 @@
     
     [self.dataArray replaceObjectAtIndex:self.highlightedModel.month withObject:oldHighlightedModel];
     
-    model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",indexPath.row - model.firstDay_WeekDay + 2]]];
+    model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%d",indexPath.row - model.firstDay_WeekDay + 2]]];
     
     [self.dataArray replaceObjectAtIndex:indexPath.section withObject:model];
     
@@ -508,7 +509,7 @@
     
     self.highlightedModel.day = day;
     
-    NSLog(@"单选点击日期:%@.%@.%ld",model.year,model.month,day);
+    NSLog(@"单选点击日期:%@.%@.%ld",model.year,model.month,(long)day);
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -585,7 +586,7 @@
             
             _currentYear = [model.year integerValue];
             
-            _yearLabel.text = [NSString stringWithFormat:@"%ld",_currentYear];
+            _yearLabel.text = [NSString stringWithFormat:@"%ld",(long)_currentYear];
         }
     }
 }
