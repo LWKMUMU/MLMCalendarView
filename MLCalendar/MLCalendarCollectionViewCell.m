@@ -11,13 +11,7 @@
 #define MLSTATENORMALCOLOR [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
 #define MLRESTCOLOR [UIColor colorWithRed:180/255.0 green:180/255.0 blue:180/255.0 alpha:1.0]
 
-@interface MLCalendarCollectionViewCell()
 
-@property (nonatomic,strong)UIView * backView;
-
-@property (nonatomic,strong)UILabel * label;
-
-@end
 
 @implementation MLCalendarCollectionViewCell
 

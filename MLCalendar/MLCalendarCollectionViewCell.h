@@ -16,11 +16,10 @@
 @end
 
 @interface MLCalendarCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIView *backView;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentLabel;
-@property (nonatomic,strong) UIColor * selectedColor;
+
+@property (nonatomic,strong,readwrite)UIView * backView;
+
+@property (nonatomic,strong,readwrite)UILabel * label;
 
 @property (nonatomic,copy) id <MLCalendarCollectionViewCellDelegate>delegate;
 @property (nonatomic,strong)MLCalendarModel * model;
