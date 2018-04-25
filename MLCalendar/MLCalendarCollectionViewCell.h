@@ -17,9 +17,8 @@
 
 @interface MLCalendarCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic,strong,readwrite)UIView * backView;
 
-@property (nonatomic,strong,readwrite)UILabel * label;
+@property (nonatomic,strong) UIColor * selectedColor;
 
 @property (nonatomic,copy) id <MLCalendarCollectionViewCellDelegate>delegate;
 @property (nonatomic,strong)MLCalendarModel * model;
