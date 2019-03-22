@@ -2,14 +2,18 @@
 
 #### 项目介绍
 
-仿iOS日历控件，可单选和多选 自定义颜色
+一般iOS系统中大多使用滚轮式日期选择 封装起来也比较简单 直接使用系统的就行
+但有时我们需要根据产品的需求 要在项目中使用安卓样式日期选择器
+
+为此封装了一个小的控件 ,使用时直接一句代码搞定，日期可单选可多选，可以变更主题颜色（仿iOS日历app样式）
+
 
 #### 安装教程
 
 1. CocoaPods安装：
          Podfile文件 输入 
-         pod 'MLMCalendarView','0.0.6'
-         
+         pod 'MLMCalendarView','0.0.7'
+         //如不是最新版本，请更新本地pod索引库
 2. 手动安装
         下载该项目
         把文件夹中的“MLCalendar”文件夹add到自己项目中即可
@@ -17,47 +21,15 @@
 
 #### 使用说明
 
-1.  引入头文件  #import "MLCalendarView.h"
+1.  引入头文件  #import "MLCalendarManager.h"
+
 2. 
-@interface ViewController ()
+[[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor redColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
+//beginDate 起始日期
+//endDate 结束日期
+//total 总的天数
+//（单选时起始日期和结束日期一致，总天数为1）
+NSLog(@"%@ --- %@ === %ld",beginDate,endDate,total);
 
-@property (nonatomic,strong)MLCalendarView * calendarView;
+}];
 
-@end
-
-3. 
-self.calendarView = [[MLCalendarView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
-
-self.calendarView.backgroundColor = [UIColor whiteColor];
-
-self.calendarView.multiSelect = YES;//是否多选 默认NO
-
-self.calendarView.maxTotal = 2;//最多可以选择几天 
-
-self.calendarView.mlColor = [UIColor orangeColor];//主题颜色 默认 深红色[UIColor colorWithRed:255/255.0 green:57/255.0 blue:84/255.0 alpha:1.0]
-
-[self.calendarView constructionUI];
-
-__weak typeof(self) weakSelf = self;
-
-self.calendarView.cancelBlock = ^{
-
-[weakSelf.calendarView removeFromSuperview];
-};
-
-//单选回调
-self.calendarView.selectBlock = ^(NSString *date) {
-
-
-};
-
-//多选回调
-self.calendarView.multiSelectBlock = ^(NSString *beginDate, NSString *endDate, NSInteger total) {
-    //beginDate 起始日期
-    //endDate 结束日期
-    //total 总的天数
-
-
-};
-
-[self.view addSubview:self.calendarView];

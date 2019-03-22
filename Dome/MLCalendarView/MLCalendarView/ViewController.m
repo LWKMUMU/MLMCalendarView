@@ -8,13 +8,11 @@
 
 #import "ViewController.h"
 
-
-#import "MLCalendarView.h"
+#import "MLCalendarManager.h"
 
 
 @interface ViewController ()
 
-@property (nonatomic,strong)MLCalendarView * calendarView;
 @end
 
 @implementation ViewController
@@ -25,36 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.calendarView = [[MLCalendarView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
-    
-    self.calendarView.backgroundColor = [UIColor whiteColor];
-    
-    self.calendarView.multiSelect = YES;
-    
-    self.calendarView.maxTotal = 2;
-    
-    [self.calendarView constructionUI];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    self.calendarView.cancelBlock = ^{
-      
-        [weakSelf.calendarView removeFromSuperview];
-    };
-    
-    self.calendarView.selectBlock = ^(NSString *date) {
-        
-        
-    };
-    self.calendarView.multiSelectBlock = ^(NSString *beginDate, NSString *endDate, NSInteger total) {
-        
-        
-    };
-    
-    [self.view addSubview:self.calendarView];
+    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 200, 100, 35.0)];
+    [btn setTitle:@"show" forState:UIControlStateNormal];
+    btn.backgroundColor =[UIColor orangeColor ];
+    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
 }
 
-
+- (void)btnAction{
+    
+    [[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor orangeColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
+      
+        NSLog(@"%@--%@ = %ld天",beginDate,endDate,total);
+        
+    }];
+}
 
 @end

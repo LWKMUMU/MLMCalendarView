@@ -13,7 +13,6 @@
 #import "MLCollectionViewHeaderView.h"
 #import "MLCalendarViewModel.h"
 
-#define MLColor [UIColor colorWithRed:255/255.0 green:57/255.0 blue:84/255.0 alpha:1.0]
 
 @interface MLCalendarView()<UICollectionViewDelegate,UICollectionViewDataSource>
 {

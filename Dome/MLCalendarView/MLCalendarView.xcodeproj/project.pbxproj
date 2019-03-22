@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353A4A242244B39900D5632C /* MLCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 353A4A222244B39900D5632C /* MLCalendarManager.m */; };
 		35CA33AA2068C2990079B58C /* MLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA33A92068C2990079B58C /* MLCalendarView.m */; };
 		35CA33AD2068C51D0079B58C /* MLCalendarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA33AC2068C51D0079B58C /* MLCalendarViewModel.m */; };
 		35EFA551206623650015EC16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFA550206623650015EC16 /* AppDelegate.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		353A4A222244B39900D5632C /* MLCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCalendarManager.m; sourceTree = "<group>"; };
+		353A4A232244B39900D5632C /* MLCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCalendarManager.h; sourceTree = "<group>"; };
 		35CA33A82068C2990079B58C /* MLCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCalendarView.h; sourceTree = "<group>"; };
 		35CA33A92068C2990079B58C /* MLCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCalendarView.m; sourceTree = "<group>"; };
 		35CA33AB2068C51D0079B58C /* MLCalendarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCalendarViewModel.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				35CA33AC2068C51D0079B58C /* MLCalendarViewModel.m */,
 				35EFA552206623650015EC16 /* ViewController.h */,
 				35EFA553206623650015EC16 /* ViewController.m */,
+				353A4A232244B39900D5632C /* MLCalendarManager.h */,
+				353A4A222244B39900D5632C /* MLCalendarManager.m */,
 				35EFA587206637B00015EC16 /* MLCalendarWeekDayView.h */,
 				35EFA588206637B00015EC16 /* MLCalendarWeekDayView.m */,
 				35EFA58A20663C2E0015EC16 /* MLCalendarCollectionViewCell.h */,
@@ -312,6 +317,7 @@
 				35EFA562206623650015EC16 /* main.m in Sources */,
 				35EFA551206623650015EC16 /* AppDelegate.m in Sources */,
 				35CA33AD2068C51D0079B58C /* MLCalendarViewModel.m in Sources */,
+				353A4A242244B39900D5632C /* MLCalendarManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +485,10 @@
 				INFOPLIST_FILE = MLCalendarView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huiOrganizers.huihui;
+				PRODUCT_BUNDLE_IDENTIFIER = com.h;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "16546454-85a2-4814-8491-e622043efe8d";
-				PROVISIONING_PROFILE_SPECIFIER = MLHuiOrganizersDevelopmentProfile;
+				PROVISIONING_PROFILE = "39773833-b342-4e99-8229-8dade009264e";
+				PROVISIONING_PROFILE_SPECIFIER = com.huiOrganizers.new.profiles;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -496,10 +502,10 @@
 				INFOPLIST_FILE = MLCalendarView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huiOrganizers.huihui;
+				PRODUCT_BUNDLE_IDENTIFIER = com.h;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "16546454-85a2-4814-8491-e622043efe8d";
-				PROVISIONING_PROFILE_SPECIFIER = MLHuiOrganizersDevelopmentProfile;
+				PROVISIONING_PROFILE = "39773833-b342-4e99-8229-8dade009264e";
+				PROVISIONING_PROFILE_SPECIFIER = com.huiOrganizers.new.profiles;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

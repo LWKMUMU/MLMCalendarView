@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define MLMainScreenOfWidth [UIScreen mainScreen].bounds.size.width
+
+#define MLMainScreenOfHeight [UIScreen mainScreen].bounds.size.height
+
+#define MLColor [UIColor colorWithRed:255/255.0 green:57/255.0 blue:84/255.0 alpha:1.0]
 @interface MLCalendarView : UIView
 
 @property (nonatomic,assign)BOOL multiSelect;//是否多选 默认NO
