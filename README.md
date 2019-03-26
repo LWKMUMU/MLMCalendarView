@@ -15,7 +15,7 @@
 
 1. CocoaPods安装：
          Podfile文件 输入 
-         pod 'MLMCalendarView','0.0.7'
+         pod 'MLMCalendarView','0.0.8'
          //如不是最新版本，请更新本地pod索引库
 2. 手动安装
         下载该项目
@@ -24,7 +24,7 @@
 
 #### 使用说明
 
-1.  引入头文件  #import "MLCalendarManager.h"
+1.  引入头文件  #import "MLCalendar.h"
 
 2. 
 [[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor redColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
