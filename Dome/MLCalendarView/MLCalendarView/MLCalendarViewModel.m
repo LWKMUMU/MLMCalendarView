@@ -8,6 +8,8 @@
 
 #import "MLCalendarViewModel.h"
 
+
+
 @interface MLCalendarViewModel()
 
 @property (nonatomic,assign) NSInteger year;
@@ -18,6 +20,9 @@
 
 @implementation MLCalendarViewModel
 
+//24节气 只有(1901 - 2050)之间为准确的节气
+const  int START_YEAR =1901;
+const  int END_YEAR   =2050;
 
 #pragma mark -  获取日期数据 NSDateComponents |ML|
 - (void)getCalendarDataArray:(void(^)(NSMutableArray * array,NSInteger monthIndex,NSInteger dayIndex))calendarData {
@@ -63,16 +68,14 @@
             
             model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",currentDay]]];
         }
+
         [calendarArray addObject:model];
 
     }
     
-//    NSLog(@"数据源个数:  %ld",calendarArray.count);
-    
     calendarData(calendarArray,currentMonthOfDataArray,currentDay);
     
 }
-
 
 #pragma mark -  返回下个月第一天的date对象 |ML|
 - (NSDate *)setNextMonthWithDay {

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "MLCalendarManager.h"
+#import "MLCalendar.h"
 
 
 @interface ViewController ()
@@ -33,7 +33,8 @@
 
 - (void)btnAction{
     
-    [[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor orangeColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
+    
+    [[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor redColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
       
         NSLog(@"%@--%@ = %ld天",beginDate,endDate,total);
         

@@ -8,15 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+@interface MLCalendarDayModel : NSObject
+
+@property (nonatomic,assign)NSInteger day;//公历日
+
+@property (nonatomic,copy)NSString * lunarDay;//农历日
+
+@property (nonatomic,copy)NSString * holidayName;//节日
+
+@property (nonatomic,copy)NSString * lunarDate;//农历日期
+
+@property (nonatomic,copy)NSString * date;//公历日期
+
+
+@end
+
 @interface MLCalendarModel : NSObject
 
-@property (nonatomic,strong)NSString * date;//日期
+@property (nonatomic,copy)NSString * date;//日期
 
-@property (nonatomic,strong)NSString * year;//年
+@property (nonatomic,copy)NSString * year;//年
 
-@property (nonatomic,strong)NSString * month;//月
+@property (nonatomic,copy)NSString * month;//月
 
 @property (nonatomic,assign)NSInteger days;//天数
+
+@property (nonatomic,strong)NSMutableArray <MLCalendarDayModel * >* dayArray;//天数具体
 
 @property (nonatomic,assign)NSInteger firstDay_WeekDay;//第一天是周几
 

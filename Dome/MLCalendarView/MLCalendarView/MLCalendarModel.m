@@ -8,6 +8,10 @@
 
 #import "MLCalendarModel.h"
 
+@implementation MLCalendarDayModel
+
+@end
+
 @implementation MLCalendarModel
 
 @end

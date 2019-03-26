@@ -50,6 +50,7 @@
 		35CA33A92068C2990079B58C /* MLCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCalendarView.m; sourceTree = "<group>"; };
 		35CA33AB2068C51D0079B58C /* MLCalendarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCalendarViewModel.h; sourceTree = "<group>"; };
 		35CA33AC2068C51D0079B58C /* MLCalendarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCalendarViewModel.m; sourceTree = "<group>"; };
+		35D749002249FE6F00F44393 /* MLCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCalendar.h; sourceTree = "<group>"; };
 		35EFA54C206623650015EC16 /* MLCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35EFA54F206623650015EC16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35EFA550206623650015EC16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				35CA33AC2068C51D0079B58C /* MLCalendarViewModel.m */,
 				35EFA552206623650015EC16 /* ViewController.h */,
 				35EFA553206623650015EC16 /* ViewController.m */,
+				35D749002249FE6F00F44393 /* MLCalendar.h */,
 				353A4A232244B39900D5632C /* MLCalendarManager.h */,
 				353A4A222244B39900D5632C /* MLCalendarManager.m */,
 				35EFA587206637B00015EC16 /* MLCalendarWeekDayView.h */,
@@ -483,7 +485,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = S26CLZB2JK;
 				INFOPLIST_FILE = MLCalendarView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.h;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,7 +502,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = S26CLZB2JK;
 				INFOPLIST_FILE = MLCalendarView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.h;
 				PRODUCT_NAME = "$(TARGET_NAME)";
