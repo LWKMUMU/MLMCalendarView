@@ -89,6 +89,13 @@
 
     //第一个显示的从周几开始
     
+    if (model.hiddenLunar){
+        //隐藏农历日期
+        self.lunarLabel.hidden = YES;
+        self.label.frame = CGRectMake(0, 0, self.backView.bounds.size.width, self.backView.bounds.size.height);
+        
+        
+    }
     if (indexPath.row < model.firstDay_WeekDay - 1){
         self.model = nil;
         self.backView.hidden = YES;

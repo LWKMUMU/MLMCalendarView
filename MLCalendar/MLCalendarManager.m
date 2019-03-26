@@ -30,7 +30,10 @@
     return manager;
 }
 
-- (void)showCalendarViewMaxTotal:(NSInteger)maxTotal mainColor:(UIColor *)color calendarBlock:(void(^)(NSString *beginDate, NSString *endDate, NSInteger total))block{
+- (void)showCalendarViewMaxTotal:(NSInteger)maxTotal
+                       mainColor:(UIColor *)color
+                     hiddenLunar:(BOOL)hiddenLunar
+                   calendarBlock:(void(^)(NSString *beginDate, NSString *endDate, NSInteger total))block{
     
     self.topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MLMainScreenOfWidth, 100.0)];
     self.topView.backgroundColor = [UIColor clearColor];
@@ -48,6 +51,8 @@
     self.calendarView.maxTotal = maxTotal;
     
     self.calendarView.mlColor = color?color:MLColor;
+    
+    self.calendarView.hiddenLunar = hiddenLunar;
     
     [self.calendarView constructionUI];
     

@@ -20,9 +20,19 @@
 
 @implementation MLCalendarViewModel
 
-//24节气 只有(1901 - 2050)之间为准确的节气
-const  int START_YEAR =1901;
-const  int END_YEAR   =2050;
+
++ (MLCalendarViewModel *)shareManager {
+    
+    static MLCalendarViewModel *manager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (manager == nil) {
+            manager = [[MLCalendarViewModel alloc]init];
+        }
+    });
+    return manager;
+    
+}
 
 #pragma mark -  获取日期数据 NSDateComponents |ML|
 - (void)getCalendarDataArray:(void(^)(NSMutableArray * array,NSInteger monthIndex,NSInteger dayIndex))calendarData {
@@ -60,6 +70,8 @@ const  int END_YEAR   =2050;
         model.year = [NSString stringWithFormat:@"%ld",self.year];
         
         model.month = [NSString stringWithFormat:@"%ld",self.month];
+        
+        model.hiddenLunar = self.hiddenLunar;
         
         //首次高亮显示位置
         if (self.year == currentYear && self.month == currentMonth){

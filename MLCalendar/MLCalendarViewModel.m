@@ -8,6 +8,8 @@
 
 #import "MLCalendarViewModel.h"
 
+
+
 @interface MLCalendarViewModel()
 
 @property (nonatomic,assign) NSInteger year;
@@ -18,6 +20,19 @@
 
 @implementation MLCalendarViewModel
 
+
++ (MLCalendarViewModel *)shareManager {
+    
+    static MLCalendarViewModel *manager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (manager == nil) {
+            manager = [[MLCalendarViewModel alloc]init];
+        }
+    });
+    return manager;
+    
+}
 
 #pragma mark -  获取日期数据 NSDateComponents |ML|
 - (void)getCalendarDataArray:(void(^)(NSMutableArray * array,NSInteger monthIndex,NSInteger dayIndex))calendarData {
@@ -56,6 +71,8 @@
         
         model.month = [NSString stringWithFormat:@"%ld",self.month];
         
+        model.hiddenLunar = self.hiddenLunar;
+        
         //首次高亮显示位置
         if (self.year == currentYear && self.month == currentMonth){
             
@@ -63,16 +80,14 @@
             
             model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",currentDay]]];
         }
+
         [calendarArray addObject:model];
 
     }
     
-//    NSLog(@"数据源个数:  %ld",calendarArray.count);
-    
     calendarData(calendarArray,currentMonthOfDataArray,currentDay);
     
 }
-
 
 #pragma mark -  返回下个月第一天的date对象 |ML|
 - (NSDate *)setNextMonthWithDay {

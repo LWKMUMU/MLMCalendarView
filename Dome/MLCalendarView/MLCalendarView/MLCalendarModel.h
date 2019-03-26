@@ -33,13 +33,13 @@
 
 @property (nonatomic,assign)NSInteger days;//天数
 
-@property (nonatomic,strong)NSMutableArray <MLCalendarDayModel * >* dayArray;//天数具体
-
 @property (nonatomic,assign)NSInteger firstDay_WeekDay;//第一天是周几
 
 @property (nonatomic,assign)NSInteger highlightedAtIndex;//高亮显示
 
 @property (nonatomic,strong)NSMutableArray * highlightedArray;//高亮显示的集合
+
+@property (nonatomic,assign)BOOL hiddenLunar;//是否隐藏农历日期显示 默认显示
 
 @end
 

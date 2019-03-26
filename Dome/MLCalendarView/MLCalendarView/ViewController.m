@@ -33,12 +33,10 @@
 
 - (void)btnAction{
     
-    
-    [[MLCalendarManager shareManager] showCalendarViewMaxTotal:4 mainColor:[UIColor redColor] calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
-      
+    [[MLCalendarManager shareManager] showCalendarViewMaxTotal:10 mainColor:[UIColor redColor] hiddenLunar:NO calendarBlock:^(NSString * _Nonnull beginDate, NSString * _Nonnull endDate, NSInteger total) {
         NSLog(@"%@--%@ = %ld天",beginDate,endDate,total);
-        
     }];
+   
 }
 
 @end

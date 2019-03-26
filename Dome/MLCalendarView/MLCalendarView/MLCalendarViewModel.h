@@ -12,6 +12,8 @@
 
 @interface MLCalendarViewModel : NSObject
 
++ (MLCalendarViewModel *)shareManager;
+
 #pragma mark -- 获取当前月共有多少天
 extern NSInteger day(NSDate * date);
 
@@ -30,6 +32,7 @@ extern NSInteger totaldaysInMonth(NSDate * date);
 #pragma mark -  获取日期数据 NSDateComponents monthIndex 月在数据源中的位置 高亮日在月中的位置|ML|
 - (void)getCalendarDataArray:(void(^)(NSMutableArray * array,NSInteger monthIndex,NSInteger dayIndex))calendarData;
 
+@property (nonatomic,assign)BOOL hiddenLunar;//是否隐藏农历日期显示 默认显示
 
 NSInteger compareDate(NSString * beginDate,NSString * endDate);
 @end

@@ -52,8 +52,6 @@
     return _dataArray;
 }
 
-
-
 - (void)constructionUI{
     
      [self buildData];
@@ -72,8 +70,10 @@
     
     [self addSubview:self.weekDayView];
     
-    [[MLCalendarViewModel alloc] getCalendarDataArray:^(NSMutableArray *array, NSInteger monthIndex, NSInteger dayIndex) {
-        
+    [MLCalendarViewModel shareManager].hiddenLunar = self.hiddenLunar;
+    
+    [[MLCalendarViewModel shareManager] getCalendarDataArray:^(NSMutableArray *array, NSInteger monthIndex, NSInteger dayIndex) {
+      
         self.dataArray = array;
         
         if (self.multiSelect){
@@ -99,8 +99,8 @@
             [self baseUI];
             
         });
-        
     }];
+    
 }
 - (instancetype)initWithFrame:(CGRect)frame{
     
@@ -287,7 +287,7 @@
         
         if (i == indexPath.section){
             
-            model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%d",indexPath.row - model.firstDay_WeekDay + 2]]];
+            model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",indexPath.row - model.firstDay_WeekDay + 2]]];
         }else{
             
             model.highlightedArray = [NSMutableArray new];
@@ -492,7 +492,7 @@
     
     [self.dataArray replaceObjectAtIndex:self.highlightedModel.month withObject:oldHighlightedModel];
     
-    model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%d",indexPath.row - model.firstDay_WeekDay + 2]]];
+    model.highlightedArray = [[NSMutableArray alloc] initWithArray:@[[NSString stringWithFormat:@"%ld",indexPath.row - model.firstDay_WeekDay + 2]]];
     
     [self.dataArray replaceObjectAtIndex:indexPath.section withObject:model];
     

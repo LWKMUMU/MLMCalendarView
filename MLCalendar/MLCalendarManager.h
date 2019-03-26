@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface MLCalendarManager : NSObject
 
 + (MLCalendarManager *)shareManager;
@@ -19,9 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
  显示view
  *maxTotal 可选择的天数限制
  *color 主题颜色
+ *hiddenLunar 隐藏农历日期
  *block 确定回调
  */
-- (void)showCalendarViewMaxTotal:(NSInteger)maxTotal mainColor:(UIColor *)color calendarBlock:(void(^)(NSString *beginDate, NSString *endDate, NSInteger total))block;
+- (void)showCalendarViewMaxTotal:(NSInteger)maxTotal
+                       mainColor:(UIColor *)color
+                     hiddenLunar:(BOOL)hiddenLunar
+                   calendarBlock:(void(^)(NSString *beginDate, NSString *endDate, NSInteger total))block;
 
 @end
 

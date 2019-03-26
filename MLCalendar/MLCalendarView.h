@@ -14,6 +14,7 @@
 
 #define MLColor [UIColor colorWithRed:255/255.0 green:57/255.0 blue:84/255.0 alpha:1.0]
 
+
 @interface MLCalendarView : UIView
 
 @property (nonatomic,assign)BOOL multiSelect;//是否多选 默认NO
@@ -22,6 +23,7 @@
 
 @property (nonatomic,assign)NSInteger maxTotal;//最多可选天数，只有当multiSelect==YES时有效 默认66天
 
+@property (nonatomic,assign)BOOL hiddenLunar;//农历日期是否显示   默认显示
 
 - (void)constructionUI;//开始布局
 
