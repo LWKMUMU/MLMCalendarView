@@ -22,7 +22,6 @@
 		35EFA58620662EED0015EC16 /* MLCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFA58520662EED0015EC16 /* MLCalendarModel.m */; };
 		35EFA589206637B00015EC16 /* MLCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFA588206637B00015EC16 /* MLCalendarWeekDayView.m */; };
 		35EFA58D20663C2E0015EC16 /* MLCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFA58B20663C2E0015EC16 /* MLCalendarCollectionViewCell.m */; };
-		35EFA58E20663C2E0015EC16 /* MLCalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35EFA58C20663C2E0015EC16 /* MLCalendarCollectionViewCell.xib */; };
 		35EFA59120663FCB0015EC16 /* MLCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EFA59020663FCB0015EC16 /* MLCollectionViewHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +73,6 @@
 		35EFA588206637B00015EC16 /* MLCalendarWeekDayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCalendarWeekDayView.m; sourceTree = "<group>"; };
 		35EFA58A20663C2E0015EC16 /* MLCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCalendarCollectionViewCell.h; sourceTree = "<group>"; };
 		35EFA58B20663C2E0015EC16 /* MLCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCalendarCollectionViewCell.m; sourceTree = "<group>"; };
-		35EFA58C20663C2E0015EC16 /* MLCalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		35EFA58F20663FCB0015EC16 /* MLCollectionViewHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCollectionViewHeaderView.h; sourceTree = "<group>"; };
 		35EFA59020663FCB0015EC16 /* MLCollectionViewHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCollectionViewHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,7 +140,6 @@
 				35EFA588206637B00015EC16 /* MLCalendarWeekDayView.m */,
 				35EFA58A20663C2E0015EC16 /* MLCalendarCollectionViewCell.h */,
 				35EFA58B20663C2E0015EC16 /* MLCalendarCollectionViewCell.m */,
-				35EFA58C20663C2E0015EC16 /* MLCalendarCollectionViewCell.xib */,
 				35EFA58F20663FCB0015EC16 /* MLCollectionViewHeaderView.h */,
 				35EFA59020663FCB0015EC16 /* MLCollectionViewHeaderView.m */,
 				35EFA58420662EED0015EC16 /* MLCalendarModel.h */,
@@ -283,7 +280,6 @@
 			files = (
 				35EFA55F206623650015EC16 /* LaunchScreen.storyboard in Resources */,
 				35EFA55C206623650015EC16 /* Assets.xcassets in Resources */,
-				35EFA58E20663C2E0015EC16 /* MLCalendarCollectionViewCell.xib in Resources */,
 				35EFA557206623650015EC16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
