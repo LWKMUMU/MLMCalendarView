@@ -1,7 +1,7 @@
-#### MLMCalendarView 一句代码搞定日期选择 
+#### MLMCalendarView 一句代码搞定日历日期选择 
                   
 ##### 预览图
-                  可单选亦可多选 
+    可单选亦可多选 ，带农历日期显示
 ![image text](https://github.com/LWKMUMU/MLMCalendarView/blob/master/效果图.jpg)
 
 #### 项目介绍
@@ -12,21 +12,24 @@
 
 #### 安装教程
 
-1. CocoaPods安装：
-         Podfile文件 输入 
-         pod 'MLMCalendarView','1.0.1'
-         //如不是最新版本，请更新本地pod索引库
-2. 手动安装
+##### 1. CocoaPods安装：
+        Podfile文件 输入 
+         
+        pod 'MLMCalendarView','1.0.1'
+ //如不是最新版本，请更新本地pod索引库
+ 
+###### 2. 手动安装
+
         下载该项目
         把文件夹中的“MLCalendar”文件夹add到自己项目中即可
 
 #### 使用说明
 
-1.  引入头文件  #import "MLCalendar.h"
+##### 1.  引入头文件  #import "MLCalendar.h"
 ``` Object-C
 #import "MLCalendar.h"
  
-//方式1
+//方式1（推荐）
 /*
 MaxTotal 最多可选的天数  单选 = 1
 mainColor 主题颜色
@@ -85,6 +88,8 @@ self.calendarView = [[MLCalendarView alloc] initWithFrame:CGRectMake(0, 100, MLM
         [weakSelf removeCalendarView];
     };
 ```
+
+
                   感谢您的来访 
-                  如有好的建议随时联系
+                  如有好的建议或者需求可随时联系我 我会及时认真对待 三克油
                   鼠标动一动 star star star ！！！重要的事情说三遍 
